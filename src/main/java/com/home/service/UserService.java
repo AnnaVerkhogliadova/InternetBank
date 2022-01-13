@@ -1,6 +1,7 @@
 package com.home.service;
 
 import com.home.model.User;
+
 import com.home.repository.UserRepository;
 import com.home.service.exception.BalanceException;
 import com.home.service.exception.UserNotFoundException;
@@ -20,28 +21,28 @@ public class UserService {
     }
 
     public User takeMoney(int id, int balance) {
-        User oldUser = getBalance(id);
-        if (oldUser.getBalance() != id) {
-            if (oldUser.getBalance() >= balance) {
-                balance = oldUser.getBalance() - balance;
-                oldUser.setBalance(balance);
+        User user = getBalance(id);
+        if (user.getId() == id) {
+            if (user.getBalance() >= balance) {
+                balance = user.getBalance() - balance;
+                user.setBalance(balance);
             } else {
                 throw new BalanceException();
             }
         } else {
             throw new UserNotFoundException();
         }
-        return userRepository.save(oldUser);
+        return userRepository.save(user);
     }
 
     public User putMoney(int id, int balance) {
-        User oldUser = getBalance(id);
-        if (oldUser.getBalance() != id) {
-            balance = oldUser.getBalance() + balance;
-            oldUser.setBalance(balance);
+        User user = getBalance(id);
+        if (user.getId() == id) {
+            balance = user.getBalance() + balance;
+            user.setBalance(balance);
         } else {
             throw new UserNotFoundException();
         }
-        return userRepository.save(oldUser);
+        return userRepository.save(user);
     }
 }
