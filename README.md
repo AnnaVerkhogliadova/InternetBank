@@ -19,3 +19,5 @@
  Скриншот структуры базы данных:
  ![image](https://user-images.githubusercontent.com/75362472/147476232-0125865b-e2c1-4b22-b82f-e3254f2cf4d4.png)
 
+4. getOperationList
+Отображает список операций за выбранный период;
