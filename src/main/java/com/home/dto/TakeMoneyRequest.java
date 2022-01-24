@@ -1,10 +1,10 @@
 package com.home.dto;
 
-import javax.validation.constraints.PositiveOrZero;
+import javax.validation.constraints.Positive;
 
 public class TakeMoneyRequest {
 
-    @PositiveOrZero(message = "Недостаточно средств")
+    @Positive
     int takeMoney;
 
     public int getTakeMoney() {
