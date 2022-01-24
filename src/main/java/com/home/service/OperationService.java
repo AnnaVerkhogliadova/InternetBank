@@ -1,7 +1,6 @@
 package com.home.service;
 
 import com.home.model.Operation;
-import com.home.model.User;
 import com.home.repository.OperationsRepository;
 import org.springframework.stereotype.Service;
 

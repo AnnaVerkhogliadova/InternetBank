@@ -1,6 +1,7 @@
 package com.home.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
@@ -12,6 +13,7 @@ public class Operation {
     private int id;
 
     @Column(name = "user_id")
+    //@NotNull
     private int userId;
 
     @Column(name = "date", columnDefinition = "DATE")

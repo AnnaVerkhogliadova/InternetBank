@@ -3,11 +3,19 @@ package com.home.dto;
 import java.time.LocalDate;
 
 public class OperationResponse {
-    int id;
-    int userId;
-    String TypeOfOperation;
-    int sum;
-    LocalDate data;
+    private final int id;
+    private final int userId;
+    private final String TypeOfOperation;
+    private final int sum;
+    private final LocalDate data;
+
+    public OperationResponse(int id, int userId, LocalDate data, int sum, String typeOfOperation) {
+        this.id = id;
+        this.userId = userId;
+        this.TypeOfOperation = typeOfOperation;
+        this.sum = sum;
+        this.data = data;
+    }
 
     public int getId() {
         return id;
@@ -28,14 +36,4 @@ public class OperationResponse {
     public LocalDate getData() {
         return data;
     }
-
-    public OperationResponse(int id, int user_id, LocalDate data, int sum, String typeOfOperation) {
-        this.id = id;
-        this.userId = userId;
-        this.TypeOfOperation = typeOfOperation;
-        this.sum = sum;
-        this.data = data;
-    }
-
-    public OperationResponse(){}
 }

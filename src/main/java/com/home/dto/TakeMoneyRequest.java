@@ -5,7 +5,7 @@ import javax.validation.constraints.Positive;
 public class TakeMoneyRequest {
 
     @Positive
-    int takeMoney;
+    private int takeMoney;
 
     public int getTakeMoney() {
         return takeMoney;
